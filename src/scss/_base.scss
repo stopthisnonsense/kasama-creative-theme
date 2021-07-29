@@ -46,3 +46,21 @@ a {
 		background-position: bottom left;
 	}
 }
+
+@include b('tagline') {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&:empty {
+		padding: rem(25px);
+	}
+	h2 {
+		&:empty {
+			padding: rem(25px);
+		}
+	}
+}
+
+@include b('typed-cursor') {
+	@extend .subtitle--xxl;
+}

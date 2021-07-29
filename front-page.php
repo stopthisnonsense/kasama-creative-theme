@@ -2,7 +2,8 @@
     <div <?php post_class( 'body-wrap' ); ?>>
       <div class="container container--fluid padding-xl bg-color-light">
         <h1 class="title title--xxxl type-center color-primary"><?php bloginfo( 'name' ); ?></h1>
-        <h2 class="subtitle subtitle--xxl type-center color-secondary"><?php bloginfo( 'description' ); ?></h2>
+        <noscript><h2 class="subtitle subtitle--xxl type-center color-secondary"><?php bloginfo( 'description' ); ?></h2></noscript>
+        <div class="tagline"><div class="js-tagline"></div></div>
       </div>
       <?php if( have_posts() ) { ?>
       <div class="grid padding-y padding-xl">

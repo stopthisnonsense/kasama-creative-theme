@@ -9,6 +9,9 @@
 
   function theme_scripts() {
     wp_enqueue_script( 'main_theme', get_stylesheet_directory_uri() . '/assets/js/bundle.js', [ 'jquery' ], '', true );
+    wp_localize_script( 'main_theme', 'kasama', array(
+        'description' => get_bloginfo('description'),
+    ));
   }
   add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
