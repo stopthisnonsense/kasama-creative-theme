@@ -1,18 +1,18 @@
+<?php
+  $hero_styles = 'padding-md bg-color-light';
+  // $title_styles = 'color-primary';
+  $subtitle_styles = 'color-medium';
+
+  if( has_post_thumbnail() ) {
+    $hero_styles = 'container--hero padding-xl';
+    $title_styles = 'color-lightest';
+    $subtitle_styles = 'color-lightest';
+  } ?>
 <?php get_header(); ?>
     <div <?php post_class( 'body-wrap' ); ?> >
       <?php if( have_posts() ) { ?>
         <?php while( have_posts() ) {
           the_post(); ?>
-          <?php
-
-          $hero_styles = 'padding-md bg-color-light';
-            // $title_styles = 'color-primary';
-            $subtitle_styles = 'color-medium';
-          if( has_post_thumbnail() ) {
-            $hero_styles = 'container--hero padding-xl';
-            $title_styles = 'color-lightest';
-            $subtitle_styles = 'color-lightest';
-          } ?>
           <div class="container container--fluid <?= $hero_styles; ?>" <?php if( has_post_thumbnail() ) { ?> style="background-image:url( <?php the_post_thumbnail_url( 'large' ); ?> )" <?php } ?> >
             <div class="grid grid--gutterless">
               <div class="grid__column grid__column--3--lg"></div>

@@ -1,19 +1,17 @@
-<?php get_header(); ?>
 <?php
- $category_term = get_queried_object();
- $featured_image = get_field( 'featured_image', $category_term );
+    $category_term = get_queried_object();
+    $featured_image = get_field( 'featured_image', $category_term );
+    $hero_styles = 'padding-md bg-color-light';
+    // $title_styles = 'color-primary';
+    $subtitle_styles = 'color-medium';
+    if( $featured_image ) {
+      $hero_styles = 'container--hero padding-xl';
+      $title_styles = 'color-lightest';
+      $subtitle_styles = 'color-lightest';
+    }
 ?>
+<?php get_header(); ?>
     <div <?php post_class( 'body-wrap' ); ?> >
-          <?php
-          $hero_styles = 'padding-md bg-color-light';
-          // $title_styles = 'color-primary';
-          $subtitle_styles = 'color-medium';
-          if( $featured_image ) {
-            $hero_styles = 'container--hero padding-xl';
-            $title_styles = 'color-lightest';
-            $subtitle_styles = 'color-lightest';
-          }
-             ?>
           <div class="container container--fluid <?= $hero_styles; ?>" <?php if( $featured_image ) { ?> style="background-image:url( <?= wp_get_attachment_image_url( $featured_image, 'large' ); ?> )" <?php } ?> >
             <div class="grid grid--gutterless">
               <div class="grid__column grid__column--3--lg"></div>
