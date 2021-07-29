@@ -5,7 +5,7 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <header class="header grid padding-sm padding-y">
+    <header class="header grid padding-xxs padding-y">
       <div class="grid__column grid__column--auto grid__column--3--lg header__left">
         <a href="<?= home_url(); ?>" class="header__link color-lightest title type-center"><?php bloginfo( 'site_title' ); ?></a>
       </div>

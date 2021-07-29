@@ -1,71 +1,73 @@
-@include b( menu ) {
-  list-style: none;
-  margin-bottom: rem( 0px );
+@include b(menu) {
+	list-style: none;
+	margin-bottom: rem(0px);
 
-  li {
-    display: block;
-    margin-bottom: 0;
-  }
-  a {
-    display: block;
-    padding: rem( 16px );
-    color: $color-lightest;
-    font-size: rem( 16px );
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+	li {
+		display: block;
+		margin-bottom: 0;
+	}
+	a {
+		display: block;
+		padding: 0.5rem rem(16px);
+		color: $color-lightest;
+		font-size: rem(16px);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
 
-  @include m( header ) {
-    display: none;
-    @include breakpoint-min( lg ) {
-      display: flex;
-      justify-content: flex-end;
-    }
+	@include m(header) {
+		display: none;
+		@include breakpoint-min(lg) {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
 
-  }
-
-  @include m( mobile ) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: $color-darkest;
-    z-index: 100;
-    transition: 300ms ease-in-out all, 100ms ease-in-out opacity;
-    transform: translateX(100vw);
-    opacity: 0;
-    a {
-      font-size: rem( 24px );
-      padding: rem( 24px );
-    }
-    @include breakpoint-min( lg ) {
-      display: none;
-    }
-  }
-  @include m( active ) {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  @include m( footer ) {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    @include breakpoint-min( lg ) {
-      justify-content: flex-end;
-    }
-    a {
-      font-size: rem( 20px );
-      padding: rem( 20px );
-      @include breakpoint-min( lg ) {
-        font-size: rem( 16px );
-        padding: rem( 16px );
-      }
-    }
-  }
+	@include m(mobile) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		@supports (inset: 0) {
+			inset: 0 0;
+		}
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: $color-darkest;
+		z-index: 100;
+		transition: 300ms ease-in-out all, 100ms ease-in-out opacity;
+		transform: translateX(100vw);
+		opacity: 0;
+		a {
+			font-size: rem(24px);
+			padding: rem(24px);
+		}
+		@include breakpoint-min(lg) {
+			display: none;
+		}
+	}
+	@include m(active) {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	@include m(footer) {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		@include breakpoint-min(lg) {
+			justify-content: flex-end;
+		}
+		a {
+			font-size: rem(20px);
+			padding: rem(20px);
+			@include breakpoint-min(lg) {
+				font-size: rem(16px);
+				padding: rem(16px);
+			}
+		}
+	}
 }

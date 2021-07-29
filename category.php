@@ -30,14 +30,14 @@
           <div class="grid__column grid__column--12 container grid__column--6--lg padding-md">
               <div class="grid">
                 <?php while( have_posts() ) {  the_post(); ?>
-                  <div class="grid__column grid__column--6--xl grid__column--12 padding-sm">
+                  <div class="grid__column grid__column--6--lg grid__column--12 padding-sm">
                     <a href="<?php the_permalink(); ?>" class="card card--project type-center">
                       <?php if( has_post_thumbnail() ) { ?>
                         <?php the_post_thumbnail( 'large', [ 'class' => 'card__image' ] )?>
                       <?php
                       } ?>
                       <div class="card__body">
-                        <h3 class="title title--xlarge color-lightest card__title"><?php the_title(); ?></h3>
+                        <h3 class="title title--xl color-lightest card__title"><?php the_title(); ?></h3>
                       </div>
 
                     </a>
