@@ -4,15 +4,16 @@
  $featured_image = get_field( 'featured_image', $category_term );
 ?>
     <div <?php post_class( 'body-wrap' ); ?> >
-          <?php if( $featured_image ) {
+          <?php
+          $hero_styles = 'padding-md bg-color-light';
+          // $title_styles = 'color-primary';
+          $subtitle_styles = 'color-medium';
+          if( $featured_image ) {
             $hero_styles = 'container--hero padding-xl';
             $title_styles = 'color-lightest';
             $subtitle_styles = 'color-lightest';
-          } else {
-            $hero_styles = 'padding-md bg-color-light';
-            // $title_styles = 'color-primary';
-            $subtitle_styles = 'color-medium';
-          } ?>
+          }
+             ?>
           <div class="container container--fluid <?= $hero_styles; ?>" <?php if( $featured_image ) { ?> style="background-image:url( <?= wp_get_attachment_image_url( $featured_image, 'large' ); ?> )" <?php } ?> >
             <div class="grid grid--gutterless">
               <div class="grid__column grid__column--3--lg"></div>

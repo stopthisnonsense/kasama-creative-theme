@@ -3,14 +3,15 @@
       <?php if( have_posts() ) { ?>
         <?php while( have_posts() ) {
           the_post(); ?>
-          <?php if( has_post_thumbnail() ) {
+          <?php
+
+          $hero_styles = 'padding-md bg-color-light';
+            // $title_styles = 'color-primary';
+            $subtitle_styles = 'color-medium';
+          if( has_post_thumbnail() ) {
             $hero_styles = 'container--hero padding-xl';
             $title_styles = 'color-lightest';
             $subtitle_styles = 'color-lightest';
-          } else {
-            $hero_styles = 'padding-md bg-color-light';
-            // $title_styles = 'color-primary';
-            $subtitle_styles = 'color-medium';
           } ?>
           <div class="container container--fluid <?= $hero_styles; ?>" <?php if( has_post_thumbnail() ) { ?> style="background-image:url( <?php the_post_thumbnail_url( 'large' ); ?> )" <?php } ?> >
             <div class="grid grid--gutterless">
