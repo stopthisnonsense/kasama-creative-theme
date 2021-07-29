@@ -18,14 +18,31 @@
 // }
 
 body {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5em;
-  @include breakpoint-min( lg ) {
-    font-size: 1em;
-  }
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5em;
+	@include breakpoint-min(lg) {
+		font-size: 1em;
+	}
 }
 
-@include b( body-wrap ) {
-  flex: 1 1 auto;
+@include b(body-wrap) {
+	flex: 1 1 auto;
+}
+
+a {
+	background-image: linear-gradient(
+		$color-primary 1px,
+		$color-lightest 1px,
+		rgba(0, 0, 0, 0)
+	);
+	background-size: 0 5%;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	transition: 150ms background-size ease-in-out;
+	&:focus,
+	&:hover {
+		background-size: 90% 5%;
+		background-position: bottom left;
+	}
 }
