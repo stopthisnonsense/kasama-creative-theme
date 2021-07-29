@@ -69,6 +69,17 @@
 				}
 			}
 		}
+		&:focus {
+			@include e(image) {
+				filter: grayscale(0);
+				transform: scale(1);
+			}
+			@include e(body) {
+				&::before {
+					background-color: transparentize($color-darkest, 0.8);
+				}
+			}
+		}
 	}
 	@include m(post) {
 		&::before {
@@ -129,6 +140,17 @@
 			position: relative;
 		}
 		&:hover {
+			@include e(image) {
+				filter: grayscale(0);
+				transform: scale(1);
+			}
+			@include e(body) {
+				&::before {
+					background-color: transparentize($color-darkest, 0.8);
+				}
+			}
+		}
+		&:focus {
 			@include e(image) {
 				filter: grayscale(0);
 				transform: scale(1);

@@ -20,6 +20,9 @@
 		&:hover {
 			color: $color-lightest;
 		}
+		&:focus {
+			color: $color-lightest;
+		}
 	}
 	@include e(menu-button) {
 		@include breakpoint-min(lg) {
