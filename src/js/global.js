@@ -23,13 +23,14 @@ jQuery(document).ready(
 		}
 		fixedHeader();
 		$(window).on('resize', fixedHeader);
-
-		const tagLineOptions = {
-			strings: [
-				`<h2 class="subtitle subtitle--xxl type-center color-secondary">${kasama.description}</h2>`,
-			],
-			typeSpeed: 50,
-		};
-		const tagLine = new Typed('.js-tagline', tagLineOptions);
+		if (document.querySelector('.js-tagline')) {
+			const tagLineOptions = {
+				strings: [
+					`<h2 class="subtitle subtitle--xxl type-center color-secondary">${kasama.description}</h2>`,
+				],
+				typeSpeed: 50,
+			};
+			const tagLine = new Typed('.js-tagline', tagLineOptions);
+		}
 	})(jQuery)
 );
